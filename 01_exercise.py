@@ -8,8 +8,8 @@ class Dashboard:
   
   @speed.setter
   def speed(self, speed):
-    #if speed <= 0 or speed >= 180:
-    if not (0 < speed <= 180):
+    #if speed < 0 or speed > 180:
+    if not (0 <= speed <= 180):
       raise ValueError("Invalid Limit!")
     self._speed = speed
   
@@ -21,8 +21,8 @@ def main():
     car = get_speed()
     print(car)
     
-    print("\nTrying to change speed into Invalid Limit form another Programmer")
-    car.speed = 900
+    #print("\nTrying to change speed into Invalid Limit form another Programmer")
+    #car.speed = 900
     
   except ValueError as e:
     print(f"Speed Error: {e}")
